@@ -1,11 +1,12 @@
 
 import './App.css'
+import Otp from './components/Otp'
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      
+      <Otp/>
     </>
   )
 }
