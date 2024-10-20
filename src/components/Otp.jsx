@@ -6,13 +6,16 @@ export default function Otp({ otpLength = 6 }) {
   const handleKeyDown = (e, index) => {
     const key = e.key;
 
-    // Allow backspace, delete, left/right arrow keys, and digits only
+    // backspace, delete, left/right arrow keys, and digits only
+
     if (key === "Backspace" || key === "Delete") {
       const newOtpFields = [...otpFields];
-      newOtpFields[index] = ""; // Clear the current field on backspace/delete
+      newOtpFields[index] = "";                // Clear the current field on backspace/delete
       setOtpFields(newOtpFields);
 
       // Move focus to the previous field if it's a backspace
+
+
       if (key === "Backspace" && index > 0) {
         e.target.previousSibling.focus();
       }
@@ -41,7 +44,7 @@ export default function Otp({ otpLength = 6 }) {
           type="text"
           value={value}
           onKeyDown={(e) => handleKeyDown(e, index)}
-          maxLength={1} // Limit input to 1 character
+          maxLength={1}     // Limit input to 1 character
           onFocus={(e) => e.target.select()} // Automatically select the value on focus
         />
       ))}
